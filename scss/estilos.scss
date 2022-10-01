@@ -20,6 +20,10 @@ body{
 // @extend %flex-center-center;
 
 
+// ::-webkit-scrollbar {
+//     display: none;
+// }
+
 // return
 .return{
     position: fixed;
@@ -123,6 +127,18 @@ header{
         position: absolute;
         bottom: 0px;
         left: 53%;
+        animation-name: scroll;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes scroll{
+        0%{
+            height: 0px;
+        }
+        100%{
+            height: 50px;
+        }
     }
 
     .custom-shape-divider-bottom-1664549048 {
@@ -186,10 +202,10 @@ header{
     transition-duration: 0.5s;
     transition-timing-function: linear;
     z-index: -1;
-}
-.fondo.visible{
-    opacity: 1;
-    z-index: 100;
+    &.visible{
+        opacity: 1;
+        z-index: 100;
+    }
 }
 .pop{
     position: fixed;
@@ -202,13 +218,14 @@ header{
     transition-property: all;
     transition-duration: 1s;
     transition-timing-function: ease-in-out;
+    &.aparece{
+        left: 50vh;
+    }
 }
-.pop.aparece{
-    left: 80px;
-}
-.newsletter{
-    width: 100vw;
+.info{
+    width: 50vw;
     height: 100vh;
+    min-width: 320px;
     position: fixed;
     top: 0;
     background-color: #ffffff;
@@ -218,6 +235,44 @@ header{
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 25px 40px;
+    padding: 20vh 40px;
+    .nav{
+        position: relative;
+        overflow: hidden;
+        height: 100px;
+        ul .title{
+        display: inline-block;
+        color: #90909b;
+        cursor: pointer;
+        padding-right: 25px;
+        &.active{
+            color: $main-color;
+            text-decoration: underline solid 1px $main-color;
+            }
+        }
+    }
+
+    .ourmenu{
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 535px;
+    }
+    .menu{
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        opacity: 0;
+    }
+    .menu.open{
+        opacity: 1;
+        position: relative;
+    }
+    .menu div{
+        width: 330px;
+        text-align: left;
+    }
 }
 

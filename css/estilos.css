@@ -144,6 +144,28 @@ header .scroll {
   position: absolute;
   bottom: 0px;
   left: 53%;
+  -webkit-animation-name: scroll;
+          animation-name: scroll;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+@-webkit-keyframes scroll {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 50px;
+  }
+}
+@keyframes scroll {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 50px;
+  }
 }
 header .custom-shape-divider-bottom-1664549048 {
   position: absolute;
@@ -203,7 +225,6 @@ header .custom-shape-divider-bottom-1664549048 .shape-fill {
           transition-timing-function: linear;
   z-index: -1;
 }
-
 .fondo.visible {
   opacity: 1;
   z-index: 100;
@@ -230,14 +251,14 @@ header .custom-shape-divider-bottom-1664549048 .shape-fill {
   -webkit-transition-timing-function: ease-in-out;
           transition-timing-function: ease-in-out;
 }
-
 .pop.aparece {
-  left: 80px;
+  left: 50vh;
 }
 
-.newsletter {
-  width: 100vw;
+.info {
+  width: 50vw;
   height: 100vh;
+  min-width: 320px;
   position: fixed;
   top: 0;
   background-color: #ffffff;
@@ -256,5 +277,51 @@ header .custom-shape-divider-bottom-1664549048 .shape-fill {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 25px 40px;
+  padding: 20vh 40px;
+}
+.info .nav {
+  position: relative;
+  overflow: hidden;
+  height: 100px;
+}
+.info .nav ul .title {
+  display: inline-block;
+  color: #90909b;
+  cursor: pointer;
+  padding-right: 25px;
+}
+.info .nav ul .title.active {
+  color: #EB695E;
+  -webkit-text-decoration: underline solid 1px #EB695E;
+          text-decoration: underline solid 1px #EB695E;
+}
+.info .ourmenu {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 535px;
+}
+.info .menu {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  opacity: 0;
+}
+.info .menu.open {
+  opacity: 1;
+  position: relative;
+}
+.info .menu div {
+  width: 330px;
+  text-align: left;
 }

@@ -34,4 +34,23 @@ $(function(){
     $("#hamburguer").click( function(){
         $(".linea").toggleClass("cruz")
     })
+
+
+
+
+    $(".title").click( function(){
+
+        $(".menu").removeClass("open");
+        $(".title").removeClass("active");
+
+        // para buscar un id (o clase o type...)
+        var id = $(this).attr("id");
+        console.log(id)
+        // buscamos la clase con punto y le añadimos la palabra de id (tiene que ser el mismo o algo igual al menos como el final)
+        $("."+id).addClass("open");
+
+        var id = $(this).attr("id");
+        $(".title_"+id).addClass("active");
+
+    });
 });
