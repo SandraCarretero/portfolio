@@ -40,7 +40,7 @@ $(function(){
 
     $(".title").click( function(){
 
-        $(".menu").removeClass("open");
+        $(".text").removeClass("open");
         $(".title").removeClass("active");
 
         // para buscar un id (o clase o type...)
